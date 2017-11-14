@@ -19,12 +19,7 @@ class photoStreamContainer extends React.Component {
     }
   }
   render () {
-    if (!this.props.photos) {
-      return (<h2>
-        { this.props.error ? 'Error Loading Photos :(' : 'Loading Photos...' }
-      </h2>)
-    }
-    return <PhotoStream photos={this.props.photos} />
+    return new PhotoStream({...this.props})
   }
 }
 

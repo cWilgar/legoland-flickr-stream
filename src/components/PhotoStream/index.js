@@ -3,6 +3,12 @@ import PhotoTile from '../PhotoTile'
 import './photo-stream.css'
 
 function PhotoStream (props) {
+  if (!props.photos) {
+    return (<h2 className='container'>
+      { props.error ? 'Error Loading Photos :(' : 'Loading Photos...' }
+    </h2>)
+  }
+
   const numCols = 3
 
   const photoTiles = []
@@ -26,7 +32,7 @@ function PhotoStream (props) {
   }
 
   return (
-    <div className='container photostream-gallery'>
+    <div className='container'>
       {photoRows}
     </div>
   )
