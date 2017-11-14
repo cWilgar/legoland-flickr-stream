@@ -7,6 +7,7 @@ function PhotoStream(props) {
     props.photos.forEach(photo => {
       photoTiles.push(
           <PhotoTile
+            key={photo.id}
             thumbnail={photo.url_t} 
             title={photo.title} 
             id={photo.id}
