@@ -7,7 +7,7 @@ const request = `https://api.flickr.com/services/rest/?${
       method: 'flickr.photos.search',
       tags: 'legoland',
       per_page: 30,
-      extras: 'owner_name,url_m,description,tags'
+      extras: 'owner_name,url_s,url_m,url_l,description,tags',
     })
 }`;
 

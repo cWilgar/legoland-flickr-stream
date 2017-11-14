@@ -9,17 +9,8 @@ function PhotoStream(props) {
     const photoTiles = [];
     props.photos.forEach((photo, index) => {
       photoTiles.push(
-          <div className="photostream__col">
-            <PhotoTile
-              key={photo.id}
-              thumbnail={photo.url_m} 
-              title={photo.title} 
-              id={photo.id}
-              owner={photo.owner}
-              ownername={photo.ownername}
-              description={photo.description._content}
-              tags={photo.tags}
-              />
+          <div className="photostream__col" key={photo.id}>
+            <PhotoTile photo={photo}/>
           </div>
         )
     });
