@@ -1,0 +1,16 @@
+// load mixins + mixin deps ..
+@import '../../../node_modules/@holidayextras/brand-legoland/src/less/colours';
+@import '../../../node_modules/@holidayextras/brand-legoland/src/less/variables';
+@import '../../../node_modules/@holidayextras/brand-legoland/src/less/mixins';
+
+.photostream__col {
+  .make-md-column(4);
+  margin-top: 20px;
+}
+.photostream__row {
+  .make-row();
+  //use flex in fullscreen:
+  @media (min-width: @screen-md-min) {
+    display: flex;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './photo-tile.css';
 
 function PhotoTile(props) {
     const ownerLink = `https://www.flickr.com/photos/${props.owner}`;
@@ -6,17 +7,17 @@ function PhotoTile(props) {
     const photoTags = props.tags.replace(/ /g, ', ');
 
     return (
-      <div>
+      <div className="panel-primary panel--phototile">
         <img src={props.thumbnail} alt={props.title}/>
-        <div>
+        <div className="panel-body">
           <a target="_blank" href={photoLink}>{props.title}</a> by <a target="_blank" href={ownerLink}>{props.ownername}</a>
+          <p
+            dangerouslySetInnerHTML={{ __html: props.description }} 
+          />
+          <p>
+            <b>Tags:</b> {photoTags}
+          </p>
         </div>
-        <p 
-          dangerouslySetInnerHTML={{ __html: props.description }} 
-        />
-        <p>
-          Tags: {photoTags}
-        </p>
       </div>
     );
 }
