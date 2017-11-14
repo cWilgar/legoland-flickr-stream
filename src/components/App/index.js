@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 
 import PhotoStreamContainer from '../../containers/PhotoStreamContainer';
 import Header from '../Header';
