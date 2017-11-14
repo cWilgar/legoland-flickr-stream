@@ -8,7 +8,7 @@ function PhotoStream(props) {
       photoTiles.push(
           <PhotoTile
             key={photo.id}
-            thumbnail={photo.url_t} 
+            thumbnail={photo.url_m} 
             title={photo.title} 
             id={photo.id}
             owner={photo.owner}
