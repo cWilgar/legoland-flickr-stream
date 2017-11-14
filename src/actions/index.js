@@ -4,9 +4,10 @@ const request = `https://api.flickr.com/services/rest/?${
       api_key: 'd560b53b95f87253b6ff64c652583031',
       format: 'json',
       nojsoncallback: 1,
-      method: 'flickr.interestingness.getList',
-      'per_page': 30,
-      'extras': 'owner_name,url_t,description,tags'
+      method: 'flickr.photos.search',
+      tags: 'legoland',
+      per_page: 30,
+      extras: 'owner_name,url_m,description,tags'
     })
 }`;
 

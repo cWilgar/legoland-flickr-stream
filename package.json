@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@holidayextras/brand-legoland": "^3.0.12",
+    "node-less-chokidar": "^0.1.2",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-redux": "^5.0.6",
@@ -11,6 +13,9 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "build-css": "node-less-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-less-chokidar src/ -o src/ --watch --recursive",
+    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
