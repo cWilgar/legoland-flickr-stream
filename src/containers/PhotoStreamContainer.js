@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => {
 
 class photoStreamContainer extends React.Component {
   render () {
-    return new PhotoStream({...this.props})
+    return new PhotoStream(this.props)
   }
 }
 
