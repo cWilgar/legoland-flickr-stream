@@ -41,9 +41,7 @@ function PhotoStream (props) {
         loadMore={props.getPhotoStream.bind(null)}
         hasMore={props.moreToLoad}
         loader={loader}>
-        <div className="tracks">
-          {photoRows}
-        </div>
+          {content}
       </InfiniteScroll>
     </div>
   )
