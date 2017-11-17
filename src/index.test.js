@@ -10,8 +10,9 @@ import thunk from 'redux-thunk'
 import configureMockStore from 'redux-mock-store'
 
 const initialState = {
-  photos: null,
-  error: false
+  photos: [],
+  error: false,
+  moreToLoad: true
 }
 const mockStore = configureMockStore([thunk])
 
