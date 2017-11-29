@@ -1,16 +1,13 @@
 import React from 'react'
 import PhotoTile from '../PhotoTile'
 import './photo-stream.css'
+import InfiniteScroll from 'react-infinite-scroller'
 
 function PhotoStream (props) {
-  if (!props.photos) {
-    return (<h2 className='container'>
-      { props.error ? 'Error Loading Photos :(' : 'Loading Photos...' }
-    </h2>)
-  }
+  let loader = (<h2>Loading Photos...</h2>)
+  let content = []
 
   const numCols = 3
-
   const photoTiles = []
   props.photos.forEach((photo, index) => {
     photoTiles.push(
@@ -19,7 +16,6 @@ function PhotoStream (props) {
       </div>
         )
   })
-
   const photoRows = []
   let key = 0
   for (let i = 0; i < photoTiles.length; i += numCols) {
@@ -30,10 +26,23 @@ function PhotoStream (props) {
       </div>
         )
   }
+  content.push(photoRows)
+
+  // If there was an error in the most recent load, show error message
+  if (props.error) {
+    content.push(<h2>Error Loading Photos</h2>)
+    loader = ''
+  }
 
   return (
     <div className='container'>
-      {photoRows}
+      <InfiniteScroll
+        pageStart={0}
+        loadMore={props.getPhotoStream.bind(null)}
+        hasMore={props.moreToLoad}
+        loader={loader}>
+          {content}
+      </InfiniteScroll>
     </div>
   )
 }
